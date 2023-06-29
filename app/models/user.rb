@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :book #リレーション
+  has_many :books, dependent: :destroy #リレーション
 
 end

@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
 
-  has_many :users, dependent: :destroy #リレーション
+  belongs_to :user #リレーション
 
 end

@@ -15,7 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.datetime :remember_created_at
 
       t.string :name, null: false #ユーザー名
-      t.string :introduction, null: false #自己紹介文
+      t.string :introduction #自己紹介文
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
