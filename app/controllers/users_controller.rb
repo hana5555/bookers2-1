@@ -1,12 +1,6 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
 
-  def new
-  end
-
-  def create
-  end
-
   def index
     @book = Book.new
     @users = User.all
@@ -25,13 +19,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:success] = "更新しました"
       redirect_to user_path(current_user.id)
     else
       render :edit
     end
-  end
-
-  def destroy
   end
 
   private
