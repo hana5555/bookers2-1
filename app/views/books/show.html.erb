@@ -22,6 +22,7 @@
             <td id="favorite_buttons_<%= @books.id %>">
                 <%= render "favorites/favorite", book: @books %>
             </td>
+            <td>コメント数:<%= @books.book_comments.count %></td>
             <% if @books.user == current_user %>
               <td><%= link_to "Edit", edit_book_path(@books.id), class: "btn btn-sm btn-success" %></td>
               <td><%= link_to "Destroy", book_path(@books.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger " %></td>
@@ -29,6 +30,16 @@
           </tr>
         </tbody>
       </table>
+
+      <!--投稿コメント表示-->
+      <div id="comments_index">
+        <%= render "book_comments/comment", book: @books, book_comment: @book_comment %>
+      </div>
+
+      <!--コメント投稿フォーム-->
+      <div id="new_comment">
+        <%= render "book_comments/form", book: @books, book_comment: @book_comment %>
+      </div>
     </div>
   </div>
 </div>
