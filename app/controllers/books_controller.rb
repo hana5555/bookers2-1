@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       flash[:success] = "投稿しました"
       redirect_to book_path(@book)
     else
-      @book = Book.all
+      @books = Book.all
       render :index
     end
   end
