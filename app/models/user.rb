@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
   #フォローしていればtrueを返す
   def following?(user)
-    following_user.include?(user)
+    following_users.include?(user)
   end
 
   #バリデーション
